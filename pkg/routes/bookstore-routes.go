@@ -3,7 +3,6 @@ package routes
 import(
 	"github.com/gorilla/mux"
 	"github.com/yrs147/go-book-management-system/pkg/controllers"
-	"fmt"
 )
 
 var RegisterBookStoreRoutes = func (router *mux.Router){
@@ -13,9 +12,4 @@ var RegisterBookStoreRoutes = func (router *mux.Router){
 	router.HandleFunc("/book/{bookId}", controllers.UpdateBook).Methods("PUT")
 	router.HandleFunc("/book/{bookId}", controllers.DeleteBook).Methods("DELETE")
 	
-}
-
-func main (){
-
-
 }

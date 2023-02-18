@@ -1,22 +1,22 @@
 package config
 
-import(
+import (
 	"github.com/jinzhu/gorm"
-	"github.com/jinzhu/gorm/dialects/mysql"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-var(
-	db * gorm.DB
+var (
+	db *gorm.DB
 )
 
-func Connect(){
-	d ,err := gorm.Open("mysql", "yash:test123/simplerest?charset=utf8&parseTime=True&loc=Local")
-	if err != nil{
+func Connect() {
+	d, err := gorm.Open("mysql", "yash:Nepal12345@tcp(localhost:3306)/simplerest?charset=utf8&parseTime=True&loc=Local")
+	if err != nil {
 		panic(err)
 	}
 	db = d
 }
 
-func GetDB() *gorm.DB{
+func GetDB() *gorm.DB {
 	return db
 }
